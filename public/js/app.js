@@ -1,8 +1,20 @@
 const App = React.createClass({
 
+    getInitialState:function () {
+      return {
+          elements:[]
+      }
+    },
+    componentDidMount:function () {
+        $.get('/forms/id/1',(elements)=>{
+            this.setState({elements});
+        })
+    },
     render: function(){
         return (
-            <div>App</div>
+            <div>
+                {this.state.elements.join(",")}
+            </div>
         )
     }
 });
