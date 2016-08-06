@@ -7,3 +7,4 @@ const App = React.createClass({
     }
 });
 
+ReactDOM.render(<App/>,document.getElementById('content'));
